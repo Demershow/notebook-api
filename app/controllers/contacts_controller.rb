@@ -5,13 +5,12 @@ class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
 
-    render json: @contacts, include: :kind
-
+    render json: @contacts, methods: [:hello, :i18n]
   end
 
   # GET /contacts/1
   def show
-    render json: @contact
+    render json: @contact #, include: :kind
   end
 
   # POST /contacts
